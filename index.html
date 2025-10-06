@@ -7,10 +7,11 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
+
   body {
-    background-color: #8a2be2; /* fondo violeta */
+    background-color: #8a2be2; /* fondo lila */
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: #333;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -32,6 +33,7 @@
     color: #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
+
   .indice a {
     color: #fff;
     text-decoration: none;
@@ -41,17 +43,19 @@
     font-weight: bold;
     transition: all 0.3s ease;
   }
+
   .indice a:hover {
     background: #fff;
     color: #ff8c00;
     transform: scale(1.1);
   }
 
-  /* BLOQUE CENTRAL */
+  /* BLOQUE CENTRAL gris con marco y 3D */
   .central {
     width: 100%;
     max-width: 1100px;
-    background: #ff8c00;
+    background: #f5f5f5; /* gris claro */
+    color: #333;
     border: 4px solid #fff;
     border-radius: 20px;
     padding: 25px 20px;
@@ -59,18 +63,9 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -2px -2px 10px rgba(255,255,255,0.2);
   }
 
-  /* TITULO RIOQUIM 3D */
-  h1 {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
   h1 .rio {
     color: #ff69b4; /* rosa */
     text-shadow:
@@ -80,6 +75,7 @@
     padding: 4px 8px;
     border-radius: 8px;
   }
+
   h1 .quim {
     color: #9370db; /* lila */
     text-shadow:
@@ -90,40 +86,27 @@
     border-radius: 8px;
   }
 
-  p.lead {
-    font-style: italic;
-    font-size: 18px;
-    text-align: center;
-    line-height: 1.5;
-  }
+  a.social { color: #333; text-decoration: underline; font-weight: 600; }
 
-  .central img {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-    max-width: 600px;
+  /* Secciones y cuadros en gris */
+  section, #clientes, .contacto {
+    background: #f5f5f5; /* gris claro */
+    color: #333;
     border-radius: 12px;
-    border: 2px solid #fff;
-  }
-
-  a.social { color: #fff; text-decoration: underline; font-weight: 600; }
-
-  section {
-    width: 100%;
-    max-width: 1100px;
-    background: #ffa50033;
     padding: 20px;
-    border-radius: 12px;
     text-align: center;
     margin-bottom: 20px;
     border: 2px solid #fff;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
   }
-  section h2 {
+
+  section h2, #clientes h2, .contacto h2 {
     margin-bottom: 12px;
     font-size: 22px;
     text-decoration: underline;
   }
-  section img {
+
+  section img, #clientes img, .contacto img {
     margin: 15px 0;
     width: 60%;
     max-width: 400px;
@@ -131,36 +114,19 @@
     border: 2px solid #fff;
   }
 
-  ul {
-    margin-top: 12px;
-    display: grid;
-    gap: 6px;
-    list-style: none;
-    padding-left: 0;
-  }
+  ul { margin-top: 12px; display: grid; gap: 6px; list-style: none; padding-left: 0; }
   ul li::before { content: "✅"; margin-right: 8px; }
 
-  /* Sección clientes */
-  #clientes {
-    width: 100%;
-    max-width: 1100px;
-    background: #ff69b433;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    border: 2px solid #fff;
-    margin-bottom: 20px;
-  }
-  #clientes h2 { font-size: 22px; text-decoration: underline; margin-bottom: 12px; }
   .clientes-frases p {
     font-size: 18px;
     font-weight: bold;
     margin: 8px 0;
-    color: #fff;
-    background: rgba(0,0,0,0.3);
+    color: #333;
+    background: rgba(255,255,255,0.7);
     padding: 8px 12px;
     border-radius: 10px;
   }
+
   .clientes-fotos img {
     margin: 10px;
     width: 30%;
@@ -168,20 +134,6 @@
     border-radius: 12px;
     border: 2px solid #fff;
   }
-
-  /* Sección de contacto */
-  .contacto {
-    width: 100%;
-    max-width: 1100px;
-    background: #ff8c0033;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    border: 2px solid #fff;
-  }
-  .contacto h2 { font-size: 22px; text-decoration: underline; margin-bottom: 12px; }
-  .contacto p { margin: 6px 0; font-size: 16px; }
-  .contacto a { color: #8a2be2; font-weight: bold; text-decoration: none; }
 
   .volver {
     display: inline-block;
@@ -194,13 +146,14 @@
     font-weight: bold;
     border: 2px solid #fff;
   }
+
   .volver:hover {
     background: #f1f1f1;
     color: #8a2be2;
   }
 
   @media (max-width: 600px) {
-    h1 { font-size: 35px; }
+    h1 { font-size: 30px; }
     .central img { width: 95%; }
     section img { width: 90%; }
     .clientes-fotos img { width: 80%; max-width: none; }
@@ -314,3 +267,4 @@
 
 </body>
 </html>
+
